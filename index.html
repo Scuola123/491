@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link th:href="@{/css/courses/courses.css}" rel="stylesheet" />
+</head>
+
+<body>
+<div class="container">
+    <header>
+      
+        <h1>Courses -Faculty Preference Project</h1>
+    </header>
+
+    <table class="tables">
+        <tr>
+            <th>Course</th>
+            <th>Prefix</th>
+            <!--th><a th:href="@{users/new}" class="new">+ New</a></th -->
+            <th></th>
+            <th>Units</th>
+            <th>Prefix</th>
+            <th><a href="/course/new"><i class="new"> + New Course </i></a></th>
+        </tr>
+        <tr th:each="course : ${course}">
+            <td th:text="${course.name}"></td>
+            <td th:text="${course.prefix}"></td>
+
+
+            <!-- td> <a href="#" type="button" th:href="@{'users/edit/' + ${user.id}}" class="edit">Edit</a></td-->
+            <!-- td><a href="#"  type="button"  th:href="@{'users/delete/' + ${user.id}}" class="delete">Delete</a -->
+            <td>  <a th:href="@{/users/edit/{id}(id=${course.id})}" class="edit">Edit</a>
+            <td>  <a th:href="@{/users/delete/{id}(id=${course.id})}" class="delete">Disable</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+</body>>
+</html>>
