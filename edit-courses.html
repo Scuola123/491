@@ -1,0 +1,32 @@
+  <form class="form-container" action="#" th:action="@{/courses/update/{id}(id=${course.id})}"
+        th:object="${course}" method="post">
+       
+            <table>
+                <tr>
+                   <td>
+                        <input type="text" name="id" th:field="*{id}" />
+                    </td>
+                <tr>
+
+                    <td>
+                        <input type="text" th:field="*{name}" />
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <input type="text" th:field="*{description}" />
+                    </td>
+                </tr>
+
+                <tr>
+
+                <td><input type="text" th:field="*{units}" /></td>
+</tr>
+<tr>
+                <td><button type="submit" class="save">Update</button> </td>
+
+                </tr>
+            </table>
+        </form>
