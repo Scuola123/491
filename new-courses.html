@@ -1,0 +1,21 @@
+<form class="form-container" action="#" th:action="@{/courses/save}" th:object="${course}" method="post">
+
+  <table>
+    <tr><th>
+       <input type="text" th:field="*{name}" class="form-control" name="name" placeholder="Name">
+    </th></tr>
+
+    <tr><td>
+      <input type="text" th:field="*{description}" name="description" class="form-control" placeholder="Description">
+  </td></tr>
+
+    <tr><td>
+    <input type="text" th:field="*{units}" name="units" class="form-control" placeholder="Units">
+  </td></tr>
+
+    <tr><td>
+        <input type="submit" class="save" value="Add course">
+    </td></tr>
+
+  </table>
+  </form>
