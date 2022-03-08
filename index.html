@@ -1,45 +1,23 @@
-<!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
-    <link th:href="@{/css/courses/courses.css}" rel="stylesheet" />
-</head>
-
-<body>
-<div class="container">
-    <header>
-      
-        <h1>Courses -Faculty Preference Project</h1>
-    </header>
-
-    <table class="tables">
-        <tr>
-            <th>Course</th>
-            <th>Prefix</th>
-            <!--th><a th:href="@{users/new}" class="new">+ New</a></th -->
-            <th></th>
-            <th>Units</th>
-            <th>Prefix</th>
-            <th><a href="/course/new"><i class="new"> + New Course </i></a></th>
-        </tr>
-        <tr th:each="course : ${course}">
-            <td th:text="${course.name}"></td>
-            <td th:text="${course.prefix}"></td>
 
 
-            <!-- td> <a href="#" type="button" th:href="@{'users/edit/' + ${user.id}}" class="edit">Edit</a></td-->
-            <!-- td><a href="#"  type="button"  th:href="@{'users/delete/' + ${user.id}}" class="delete">Delete</a -->
-            <td>  <a th:href="@{/users/edit/{id}(id=${course.id})}" class="edit">Edit</a>
-            <td>  <a th:href="@{/users/delete/{id}(id=${course.id})}" class="delete">Disable</a>
-            </td>
-        </tr>
-    </table>
-</div>
+                <table>
+                    <tr> <th>Id</th>
+                        <th>Course</th>
+                        <th th:width="80">Description</th>
+                        <th>Units</th>
 
 
+                        <th><a href="/courses/new"><i class="new"> + New Course </i></a></th>
+                    </tr>
+                    <tr th:each="course : ${course}">
+                        <td th:text="${course.id}"></td>
+                        <td th:text="${course.name}"></td>
+                        <td th:width="80" th:text="${course.description}"></td>
+                        <td th:text="${course.units}"></td>
 
-</body>>
-</html>>
+                        <!--td> <a th:href="@{/departments/edit/{id}(id=${department.id})}" class="edit">Update</a></td-->
+                        <td>  <a th:href="@{/courses/edit/{id}(id=${course.id})}" class="edit">Edit</a>
+                        </td>
+                    </tr>
+                </table>
+
